@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { FlatList, Image, View } from 'react-native';
+import { FlatList, Image } from 'react-native';
 
 import logoImg from '../../assets/logo-nlw-esports.png';
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { Header } from '../../components/Header';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { styles } from './styles';
 
@@ -17,7 +18,7 @@ export function Home() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={logoImg} style={styles.logo} />
       <Header
         title="Encontre seu duo!"
@@ -32,6 +33,6 @@ export function Home() {
         horizontal
         contentContainerStyle={styles.contentList}
       />
-    </View>
+    </SafeAreaView>
   );
 }
